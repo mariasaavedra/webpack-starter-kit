@@ -1,4 +1,4 @@
-html,
-body {
-    background: url('img/kitten.jpg');
-}
+@import 'scss/helpers/variables';
+@import 'scss/helpers/mixins';
+@import 'scss/helpers/grid';
+@import 'scss/components/buttons';
