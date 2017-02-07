@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import express from 'express';
 import path from 'path';
 import open from 'open';
@@ -23,6 +24,7 @@ app.listen(port, function(err) {
   if (err) {
     console.log(err);
   } else {
+    console.log(chalk.green('Listening on port ' + port));
     open('http://localhost:' + port);
   }
 });
