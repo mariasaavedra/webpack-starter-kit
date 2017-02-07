@@ -1,1 +1,1 @@
-A site for Hailey
+A starter kit with dev and prod webpack 2 configs.
