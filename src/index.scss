@@ -1,4 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,700');
 @import 'scss/helpers/variables';
 @import 'scss/helpers/mixins';
 @import 'scss/helpers/grid';
 @import 'scss/components/buttons';
+
+body,
+html {
+    background: #f5f5f5;
+    font-size: 62.5%;
+}
+
+#title,
+#anchor {
+    font-family: 'Lato', sans-serif;
+    margin-top: calc(50vh - 10rem);
+    text-align: center;
+}
+
+#title {
+    font-weight: 300;
+    font-size: 10rem;
+}
+#anchor {
+    display: block;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #1E88E5;
+}
