@@ -3,7 +3,11 @@ const webpack = require('webpack'); //to access built-in plugins
 const path = require('path');
 // __dirname refers to the directory where this webpack.config.js lives, which in this case is the project root.
 module.exports = {
-  entry: path.resolve(__dirname, './src/index'),
+  entry: [
+    path.resolve(__dirname, './src/index'),
+     'webpack/hot/dev-server',
+    'webpack-hot-middleware/client'
+    ],
    target: 'web',
   output: {
     path: path.resolve(__dirname, 'src'),
@@ -23,6 +27,7 @@ module.exports = {
       template: 'src/index.html',
       inject: true
     }),
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
