@@ -1,0 +1,62 @@
+// breakpoints
+@mixin bp($point) {
+   @if $point == xl {
+     @media (min-width: 70em) { @content ; }
+  }
+   @else if $point == lg {
+     @media (min-width: 64em) { @content ; }
+  }
+    @else if $point == md {
+     @media (min-width: 50em) { @content ; }
+  }
+   @else if $point == sm {
+     @media (min-width: 37.5em)  { @content ; }
+  }
+  @else if $point == xs {
+     @media (max-width: 37.5em)  { @content ; }
+
+  }
+}
+
+// clearfix
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// generic transform
+@mixin transition($t) {
+       -moz-transition: $t ease-in-out all;
+         -o-transition: $t ease-in-out all;
+        -ms-transition: $t ease-in-out all;
+    -webkit-transition: $t ease-in-out all;
+          transition: $t ease-in-out all;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+     @include transform(scale($scale));
+}
+// translate
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+         -o-transform-origin: $origin;
+        -ms-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+          transform-origin: $origin;
+}
