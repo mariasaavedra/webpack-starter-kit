@@ -7,9 +7,9 @@ module.exports = {
   entry: [
     path.resolve(__dirname, './src/index'),
      'webpack/hot/dev-server',
-    'webpack-hot-middleware/client'
+     'webpack-hot-middleware/client'
     ],
-   target: 'web',
+  target: 'web',
   output: {
     path: path.resolve(__dirname, 'src'),
     publicPath: '/',
@@ -18,9 +18,9 @@ module.exports = {
   module: {
     loaders: [
         { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
-        {test: /\.scss$/, loaders: ['style-loader','css-loader', 'sass-loader']},
-        {test: /\.(png|jpg|svg)$/, loaders: ['file-loader?name=img/[name].[ext]']},
-        {test:/\.html$/, loaders: ['html-loader']},
+        { test: /\.scss$/, loaders: ['style-loader','css-loader', 'sass-loader']},
+        { test: /\.(png|jpg|svg)$/, loaders: ['file-loader?name=img/[name].[ext]']},
+        { test:/\.html$/, loaders: ['html-loader']},
         { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
         { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
     ]

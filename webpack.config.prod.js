@@ -7,8 +7,8 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 module.exports = {
   entry: [
     path.resolve(__dirname, './src/index'),
-    ],
-   target: 'web',
+  ],
+  target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
@@ -17,9 +17,11 @@ module.exports = {
   module: {
     loaders: [
         { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
-        {test: /\.scss$/, loaders: ['style-loader','css-loader?name=[name][hash].[ext]', 'sass-loader?name=[name][hash].[ext]']},
-        {test: /\.(png|jpg)$/, loaders: ['file-loader?name=img/[name].[ext]']},
-        {test:/\.html$/, loaders: ['html-loader']}
+        { test: /\.scss$/, loaders: ['style-loader','css-loader', 'sass-loader']},
+        { test: /\.(png|jpg|svg)$/, loaders: ['file-loader?name=img/[name].[ext]']},
+        { test:/\.html$/, loaders: ['html-loader']},
+        { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+        { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
     ]
   },
   plugins: [
@@ -27,7 +29,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       inject: true,
-       favicon: 'favicon.ico',
+      favicon: 'favicon.ico',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -41,7 +43,7 @@ module.exports = {
         minifyURLs: true
       },
     }),
-   new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
   ]
 };

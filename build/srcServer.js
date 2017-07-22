@@ -24,7 +24,7 @@ app.get('/', function(req, res) {
 
 app.listen(port, function(err) {
   if (err) {
-    console.log(err);
+    console.log(chalk.red(err));
   } else {
     console.log(chalk.green('Listening on port ' + port));
     open('http://localhost:' + port);
